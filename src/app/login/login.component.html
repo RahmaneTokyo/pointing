@@ -1,0 +1,29 @@
+<div class="h-screen bg-indigo-300 flex justify-center items-center">
+  <div class="w-2/3 h-5/6 bg-indigo-500 rounded-3xl">
+    <!-- Left side -->
+    <div class="flex items-center justify-center bg-white rounded-3xl md:w-1/2 h-full">
+      <div class="grid w-3/4">
+        <label class="font-bold text-3xl">Bienvenue</label>
+        <label class="text-gray-500">Veuillez entrez vos identifiants</label>
+
+        <!-- Login form -->
+        <form #login="ngForm" class="my-5">
+          <div class="grid">
+            <label for="email">Email</label>
+            <input ngModel #email="ngModel" type="text" name="email" id="email" class="my-3 rounded p-3 border border-gray-300 focus:outline-none focus:ring focus:border-indigo-500" placeholder="example@example.com" required>
+          </div>
+
+          <div class="grid">
+            <label for="password">Mot de passe</label>
+            <input ngModel #password="ngModel" type="password" name="password" id="password" class="my-3 rounded p-3 border border-gray-300 focus:outline-none focus:ring focus:border-indigo-500" placeholder="******" required>
+          </div>
+
+          <div class="my-5">
+            <button routerLink="/directeur" type="submit" [disabled]="login.invalid" class="w-full py-4 rounded bg-indigo-500 text-white hover:bg-indigo-700 transition duration-300 cursor-pointer disabled:cursor-not-allowed disabled:bg-indigo-300">Connexion</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Right side -->
+  </div>
+</div>

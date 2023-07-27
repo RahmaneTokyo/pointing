@@ -1,0 +1,118 @@
+<header class="m-11 font-fredoka">
+  <label class="text-4xl">Liste des {{title}}s</label>
+</header>
+
+<!-- Liste des entrées -->
+<div class="mx-11 my-5" *ngIf="title === 'entree'">
+
+  <div class="flex w-full justify-between my-5">
+    <div class="flex gap-2">
+      <input type="text" placeholder="Rechercher par matricule" class="px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring focus:border-indigo-500 hover:ring hover:ring-indigo-500 transition duration-300">
+      <button type="button" class="px-5 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 transition duration-300">Rechercher</button>
+    </div>
+
+    <!--<div class="flex gap-3 items-center">
+      Selectionner une date
+      <input type="date" class="border px-5 py-2 border-gray-400 rounded-lg hover:ring hover:ring-indigo-500 transition duration-300 focus:outline-none focus:ring focus:border-indigo-500">
+    </div>-->
+  </div>
+
+  <div class="shadow rounded w-full border">
+    <table class="w-full p-3">
+      <thead>
+      <tr class="text-gray-500 border-b">
+        <th class="py-3 px-5 text-left">Prénoms & Nom</th>
+        <th class="py-3 px-5 text-left">Matricule</th>
+        <th class="py-3 px-5 text-left">Email</th>
+        <th class="py-3 px-5 text-left">Rôle</th>
+        <th class="py-3 px-5 text-left">Date</th>
+        <th class="py-3 px-5 text-left">Heure d'arrivée</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of entrees">
+        <td class="py-3 px-5 text-left border-b">{{item.prenom}} {{item.nom}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.matricule}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.email}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.role}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.date}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.heureEntree | date:'hh:mm'}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="my-5 flex justify-between w-auto mx-3">
+      <button type="button" class="px-3 py-2 rounded-lg border flex items-center gap-2 hover:bg-indigo-500 transition duration-300 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Précédent
+      </button>
+
+      <button type="button" class="px-3 py-2 rounded-lg border flex items-center gap-2 hover:bg-indigo-500 transition duration-300 hover:text-white">
+        Suivant
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Liste des sorties -->
+<div class="mx-11 my-5" *ngIf="title === 'sortie'">
+
+  <div class="flex w-full justify-between my-5">
+    <div class="flex gap-2">
+      <input type="text" placeholder="Rechercher par matricule" class="px-3 py-2 border border-gray-400 rounded-lg focus:outline-none focus:ring focus:border-indigo-500 hover:ring hover:ring-indigo-500 transition duration-300">
+      <button type="button" class="px-5 py-2 bg-indigo-500 text-white rounded-lg hover:bg-indigo-700 transition duration-300">Rechercher</button>
+    </div>
+
+    <!--<div class="flex gap-3 items-center">
+      Selectionner une date
+      <input type="date" class="border px-5 py-2 border-gray-400 rounded-lg hover:ring hover:ring-indigo-500 transition duration-300 focus:outline-none focus:ring focus:border-indigo-500">
+    </div>-->
+  </div>
+
+  <div class="shadow rounded w-full border">
+    <table class="w-full p-3">
+      <thead>
+      <tr class="text-gray-500 border-b">
+        <th class="py-3 px-5 text-left">Prénoms & Nom</th>
+        <th class="py-3 px-5 text-left">Matricule</th>
+        <th class="py-3 px-5 text-left">Email</th>
+        <th class="py-3 px-5 text-left">Rôle</th>
+        <th class="py-3 px-5 text-left">Date</th>
+        <th class="py-3 px-5 text-left">Heure de sortie</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of entrees">
+        <td class="py-3 px-5 text-left border-b">{{item.prenom}} {{item.nom}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.matricule}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.email}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.role}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.date}}</td>
+        <td class="py-3 px-5 text-left border-b text-gray-500">{{item.heureEntree | date:'hh:mm'}}</td>
+      </tr>
+      </tbody>
+    </table>
+
+    <div class="my-5 flex justify-between w-auto mx-3">
+      <button type="button" class="px-3 py-2 rounded-lg border flex items-center gap-2 hover:bg-indigo-500 transition duration-300 hover:text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+        </svg>
+        Précédent
+      </button>
+
+      <button type="button" class="px-3 py-2 rounded-lg border flex items-center gap-2 hover:bg-indigo-500 transition duration-300 hover:text-white">
+        Suivant
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
