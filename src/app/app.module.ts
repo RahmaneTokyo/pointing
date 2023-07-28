@@ -10,6 +10,8 @@ import { SidebarComponent } from './common/sidebar/sidebar.component';
 import { HeaderComponent } from './common/header/header.component';
 import { DirecteurComponent } from './directeur/directeur.component';
 import { PointageComponent } from './directeur/pointage/pointage.component';
+import {SidebarModule} from "primeng/sidebar";
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 
 @NgModule({
   declarations: [
@@ -21,11 +23,13 @@ import { PointageComponent } from './directeur/pointage/pointage.component';
     DirecteurComponent,
     PointageComponent
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    FormsModule,
+    SidebarModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

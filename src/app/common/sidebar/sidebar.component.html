@@ -35,3 +35,48 @@
     </div>
   </footer>
 </div>
+
+<button (click)="sidebarVisible = !sidebarVisible" class="p-5 md:hidden hover:text-indigo-500 transition duration-300">
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 5.25h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5m-16.5 4.5h16.5" />
+  </svg>
+</button>
+
+<p-sidebar [(visible)]="sidebarVisible">
+  <div class="flex items-center justify-center h-20">
+    <span class="text-4xl font-fredoka uppercase">RH-Industries</span>
+  </div>
+
+  <footer>
+    <div class="my-10 grid gap-5">
+      <div class="w-full flex justify-center">
+        <img src="assets/male-avatar.png" alt="avatar" class="w-1/2 bg-white rounded-full border-transparent ">
+      </div>
+      <label class="text-center text-xl">Bienvenue</label>
+      <label class="text-center text-2xl font-bold capitalize">Rahmane Ndiaye</label>
+      <div class="flex justify-center">
+        <button routerLink="/login" type="button" class="px-3 py-2 text-red-500 flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+          </svg>
+          Déconnexion
+        </button>
+      </div>
+    </div>
+  </footer>
+
+  <div class="flex flex-col flex-1 overflow-y-auto">
+    <ul class="flex-1 px-2 py-4 text-xl">
+      <li class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/pointages/entree'">
+        <a class="px-4 py-3 font-semibold">Liste des entrées</a>
+      </li>
+      <li class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/pointages/sortie'">
+        <a class="px-4 py-3 font-semibold">Liste des sorties</a>
+      </li>
+      <li class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/employees'">
+        <a class="px-4 py-3 font-semibold">Liste des employés</a>
+      </li>
+    </ul>
+  </div>
+
+</p-sidebar>
