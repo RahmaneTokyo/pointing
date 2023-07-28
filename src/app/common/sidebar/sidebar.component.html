@@ -67,13 +67,13 @@
 
   <div class="flex flex-col flex-1 overflow-y-auto">
     <ul class="flex-1 px-2 py-4 text-xl">
-      <li class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/pointages/entree'">
+      <li (click)="sidebarVisible = !sidebarVisible" class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/pointages/entree'">
         <a class="px-4 py-3 font-semibold">Liste des entrées</a>
       </li>
-      <li class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/pointages/sortie'">
+      <li (click)="sidebarVisible = !sidebarVisible" class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/pointages/sortie'">
         <a class="px-4 py-3 font-semibold">Liste des sorties</a>
       </li>
-      <li class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/employees'">
+      <li (click)="sidebarVisible = !sidebarVisible" class="rounded-xl flex items-center my-3 cursor-pointer hover:text-white hover:bg-indigo-500 transition duration-300" [routerLinkActive]="'active'" [routerLink]="'/directeur/employees'">
         <a class="px-4 py-3 font-semibold">Liste des employés</a>
       </li>
     </ul>
